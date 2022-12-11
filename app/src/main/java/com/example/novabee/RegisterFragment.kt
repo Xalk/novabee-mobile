@@ -29,20 +29,44 @@ class RegisterFragment : Fragment() {
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
-        binding.btnSignUp.setOnClickListener {
-            authViewModel.registerUser(UserRequest("test01@gmail.com", "test testovenko", "111111"))
-//            findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
-        }
-
-        binding.btnToLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
-        }
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnSignUp.setOnClickListener {
+            val validationResult = validateUserInput()
+            if(validationResult.first){
+//                authViewModel.registerUser(getUserRequest())
+                authViewModel.registerUser(UserRequest("b@g.com", "bg", "123456"))
+            }else{
+                binding.txtError.text = validationResult.second
+            }
+        }
+
+        binding.btnToLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+
+        bindObservers()
+
+    }
+
+    private fun getUserRequest():UserRequest{
+        val emailAddress = binding.txtEmail.text.toString()
+        val password = binding.txtPassword.text.toString()
+        val username = binding.txtUsername.text.toString()
+        return UserRequest(emailAddress, username, password)
+    }
+
+    private fun validateUserInput(): Pair<Boolean, String> {
+        val userRequest = getUserRequest()
+        return authViewModel.validateCredentials(userRequest.fullName, userRequest.email, userRequest.password, false)
+    }
+
+    private fun bindObservers() {
         authViewModel.userResponseLiveData.observe(viewLifecycleOwner, Observer {
             binding.progressBar.isVisible = false
             when (it) {
