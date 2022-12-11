@@ -13,7 +13,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.novabee.databinding.FragmentRegisterBinding
 import com.example.novabee.models.UserRequest
 import com.example.novabee.utils.NetworkResult
+import com.example.novabee.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
@@ -22,12 +24,19 @@ class RegisterFragment : Fragment() {
     private val binding get() = _binding!!
     private val authViewModel by viewModels<AuthViewModel>()
 
+    @Inject
+    lateinit var tokenManager: TokenManager
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+
+        if(tokenManager.getToken() != null){
+            findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
+        }
 
         return binding.root
     }
@@ -39,8 +48,7 @@ class RegisterFragment : Fragment() {
         binding.btnSignUp.setOnClickListener {
             val validationResult = validateUserInput()
             if(validationResult.first){
-//                authViewModel.registerUser(getUserRequest())
-                authViewModel.registerUser(UserRequest("b@g.com", "bg", "123456"))
+                authViewModel.registerUser(getUserRequest())
             }else{
                 binding.txtError.text = validationResult.second
             }
@@ -71,7 +79,7 @@ class RegisterFragment : Fragment() {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    //token
+                    tokenManager.saveToken(it.data!!.token)
                     findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                 }
                 is NetworkResult.Error -> {
