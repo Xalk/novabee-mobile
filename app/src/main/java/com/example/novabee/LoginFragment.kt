@@ -15,6 +15,7 @@ import com.example.novabee.models.UserRequest
 import com.example.novabee.utils.NetworkResult
 import com.example.novabee.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -23,6 +24,7 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
     private val authViewModel by viewModels<AuthViewModel>()
 
+    @Inject
     lateinit var tokenManager: TokenManager
 
     override fun onCreateView(
