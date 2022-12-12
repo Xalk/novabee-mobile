@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/projects/mobile/novabee/app/src/main/res/drawable/apiary_background.xml" value="0.2465" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/apiary_item.xml" value="0.6" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_main.xml" value="0.25" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_register.xml" value="0.264" />
+        <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/note_item.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>

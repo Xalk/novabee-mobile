@@ -17,6 +17,6 @@ interface ApiaryAPI {
     suspend fun updateApiary(@Path("apiaryId") apiaryId: String, @Body apiaryRequest: ApiaryRequest): Response<ApiaryResponse>
 
     @GET("api/apiary/{apiaryId}")
-    suspend fun deleteApiary(@Path("apiaryId") apiaryId: String): Response<List<ApiaryResponse>>
+    suspend fun deleteApiary(@Path("apiaryId") apiaryId: String): Response<ApiaryResponse>
 
 }
