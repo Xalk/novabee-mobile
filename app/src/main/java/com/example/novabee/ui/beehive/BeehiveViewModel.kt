@@ -1,4 +1,4 @@
-package com.example.novabee
+package com.example.novabee.ui.beehive
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

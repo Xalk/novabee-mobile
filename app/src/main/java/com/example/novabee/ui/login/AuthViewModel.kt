@@ -1,4 +1,4 @@
-package com.example.novabee
+package com.example.novabee.ui.login
 
 import android.text.TextUtils
 import android.util.Patterns

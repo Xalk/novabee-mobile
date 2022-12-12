@@ -1,4 +1,4 @@
-package com.example.novabee
+package com.example.novabee.ui.beehive
 
 import android.os.Bundle
 import android.util.Log
@@ -42,18 +42,20 @@ class BeehiveFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val jsonApiary = arguments?.getString("apiary")
 
+        setInitialData()
+        bindObservers()
+        beehiveViewModel.getBeehives(apiary!!._id)
+        binding.beehiveList.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        binding.beehiveList.adapter = adapter
+    }
+
+    private fun setInitialData() {
+        val jsonApiary = arguments?.getString("apiary")
         if (jsonApiary != null) {
             apiary = Gson().fromJson(jsonApiary, ApiaryResponse::class.java)
             Log.d(TAG, apiary.toString())
         }
-
-        bindObservers()
-        beehiveViewModel.getBeehives(apiary!!._id)
-        binding.beehiveList.layoutManager =
-            StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-        binding.beehiveList.adapter = adapter
     }
 
     private fun bindObservers() {

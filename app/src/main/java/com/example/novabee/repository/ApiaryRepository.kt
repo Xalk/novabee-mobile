@@ -21,7 +21,7 @@ class ApiaryRepository @Inject constructor(private val apiaryAPI: ApiaryAPI) {
         get() = _statusLiveData
 
     suspend fun getApiaries() {
-        _apiaryLiveData.postValue(NetworkResult.Loading())
+        _statusLiveData.postValue(NetworkResult.Loading())
         val response = apiaryAPI.getApiaries()
         if (response.isSuccessful && response.body() != null) {
             _apiaryLiveData.postValue(NetworkResult.Success(response.body()!!))

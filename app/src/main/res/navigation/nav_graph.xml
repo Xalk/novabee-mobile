@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.novabee.LoginFragment"
+        android:name="com.example.novabee.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.novabee.RegisterFragment"
+        android:name="com.example.novabee.ui.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.novabee.MainFragment"
+        android:name="com.example.novabee.ui.apiary.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/beehiveFragment"
-        android:name="com.example.novabee.BeehiveFragment"
+        android:name="com.example.novabee.ui.beehive.BeehiveFragment"
         android:label="fragment_beehive"
         tools:layout="@layout/fragment_beehive" />
 </navigation>

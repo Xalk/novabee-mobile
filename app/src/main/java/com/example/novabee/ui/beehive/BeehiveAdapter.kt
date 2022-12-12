@@ -1,4 +1,4 @@
-package com.example.novabee
+package com.example.novabee.ui.beehive
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import com.example.novabee.models.BeehiveResponse
 
 
 class BeehiveAdapter(private val onBeehiveClicked: (BeehiveResponse) -> Unit) :
-    ListAdapter<BeehiveResponse,BeehiveAdapter.BeehiveViewHolder>(ComparatorDiffUtil()) {
+    ListAdapter<BeehiveResponse, BeehiveAdapter.BeehiveViewHolder>(ComparatorDiffUtil()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeehiveViewHolder {

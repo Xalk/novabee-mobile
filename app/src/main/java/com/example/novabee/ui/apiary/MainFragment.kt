@@ -1,4 +1,4 @@
-package com.example.novabee
+package com.example.novabee.ui.apiary
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.novabee.R
 import com.example.novabee.databinding.FragmentMainBinding
 import com.example.novabee.models.ApiaryResponse
 import com.example.novabee.utils.NetworkResult
