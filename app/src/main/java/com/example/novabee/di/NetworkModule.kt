@@ -2,6 +2,7 @@ package com.example.novabee.di
 
 import com.example.novabee.api.ApiaryAPI
 import com.example.novabee.api.AuthInterceptor
+import com.example.novabee.api.BeehiveAPI
 import com.example.novabee.api.UserAPI
 import com.example.novabee.utils.Constants.BASE_URL
 import dagger.Module
@@ -47,6 +48,15 @@ class NetworkModule {
             .client(okHttpClient)
             .build()
             .create(ApiaryAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesBeehiveAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): BeehiveAPI {
+        return retrofitBuilder
+            .client(okHttpClient)
+            .build()
+            .create(BeehiveAPI::class.java)
     }
 
 }

@@ -10,7 +10,8 @@ import com.example.novabee.databinding.ApiaryItemBinding
 import com.example.novabee.models.ApiaryResponse
 
 
-class ApiaryAdapter() : ListAdapter<ApiaryResponse, ApiaryAdapter.ApiaryViewHolder>(ComparatorDiffUtil()) {
+class ApiaryAdapter(private val onApiaryClicked: (ApiaryResponse) -> Unit) :
+    ListAdapter<ApiaryResponse, ApiaryAdapter.ApiaryViewHolder>(ComparatorDiffUtil()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ApiaryViewHolder {
@@ -32,6 +33,9 @@ class ApiaryAdapter() : ListAdapter<ApiaryResponse, ApiaryAdapter.ApiaryViewHold
             binding.title.text = apiary.name
             binding.desc.text = apiary.description
             binding.beehives.text = "Beehives: " + apiary.beehives.size.toString()
+            binding.root.setOnClickListener {
+                onApiaryClicked(apiary)
+            }
         }
     }
 
