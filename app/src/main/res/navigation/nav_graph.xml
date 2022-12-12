@@ -35,4 +35,9 @@
         android:name="com.example.novabee.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/beehiveFragment"
+        android:name="com.example.novabee.BeehiveFragment"
+        android:label="fragment_beehive"
+        tools:layout="@layout/fragment_beehive" />
 </navigation>
