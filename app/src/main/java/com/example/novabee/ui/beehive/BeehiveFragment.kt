@@ -82,7 +82,9 @@ class BeehiveFragment : Fragment() {
 
     private fun onBeehiveClicked(beehiveResponse: BeehiveResponse) {
         val bundle = Bundle()
+        bundle.putString("beehive", Gson().toJson(beehiveResponse))
         findNavController().navigate(R.id.action_beehiveFragment_to_beehiveDetails, bundle)
+        Toast.makeText(requireContext(), "beehive - ${beehiveResponse.name}", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {
