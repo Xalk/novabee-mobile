@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.novabee.R
 import com.example.novabee.databinding.FragmentBeehiveBinding
 import com.example.novabee.models.ApiaryResponse
 import com.example.novabee.models.BeehiveResponse
@@ -37,6 +39,7 @@ class BeehiveFragment : Fragment() {
 
         _binding = FragmentBeehiveBinding.inflate(inflater, container, false)
         adapter = BeehiveAdapter(::onBeehiveClicked)
+
         return binding.root
     }
 
@@ -78,7 +81,8 @@ class BeehiveFragment : Fragment() {
     }
 
     private fun onBeehiveClicked(beehiveResponse: BeehiveResponse) {
-
+        val bundle = Bundle()
+        findNavController().navigate(R.id.action_beehiveFragment_to_beehiveDetails, bundle)
     }
 
     override fun onDestroyView() {
