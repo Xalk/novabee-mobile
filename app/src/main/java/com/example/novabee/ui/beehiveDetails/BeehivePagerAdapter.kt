@@ -4,14 +4,20 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.novabee.models.BeehiveResponse
+import com.example.novabee.ui.beehiveDetails.queen.QueenFragment
 import com.google.gson.Gson
 
-internal class BeehivePagerAdapter(var context: BeehiveDetailsFragment, fm: FragmentManager, var totalTabs: Int) :
+internal class BeehivePagerAdapter(
+    var context: BeehiveDetailsFragment,
+    fm: FragmentManager,
+    var totalTabs: Int,
+    private val beehiveResponse: BeehiveResponse
+) :
     FragmentPagerAdapter(fm) {
     override fun getCount(): Int {
         return totalTabs
     }
-
 
 
     override fun getItem(position: Int): Fragment {
@@ -35,7 +41,7 @@ internal class BeehivePagerAdapter(var context: BeehiveDetailsFragment, fm: Frag
             }
             2 -> {
                 val bundle = Bundle()
-                bundle.putString("queen", "testForQueen")
+                bundle.putString("queen", Gson().toJson(beehiveResponse))
                 val fragment = QueenFragment()
                 fragment.arguments = bundle
 

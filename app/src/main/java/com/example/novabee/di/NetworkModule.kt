@@ -1,9 +1,6 @@
 package com.example.novabee.di
 
-import com.example.novabee.api.ApiaryAPI
-import com.example.novabee.api.AuthInterceptor
-import com.example.novabee.api.BeehiveAPI
-import com.example.novabee.api.UserAPI
+import com.example.novabee.api.*
 import com.example.novabee.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -57,6 +54,15 @@ class NetworkModule {
             .client(okHttpClient)
             .build()
             .create(BeehiveAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesQueenAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): QueenAPI {
+        return retrofitBuilder
+            .client(okHttpClient)
+            .build()
+            .create(QueenAPI::class.java)
     }
 
 }

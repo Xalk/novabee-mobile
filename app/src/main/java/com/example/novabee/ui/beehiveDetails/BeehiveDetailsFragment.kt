@@ -57,7 +57,7 @@ class BeehiveDetailsFragment : Fragment() {
         tabLayout.addTab(tabLayout.newTab().setText("Queen"))
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
-        val adapter = BeehivePagerAdapter(this, childFragmentManager, tabLayout.tabCount)
+        val adapter = BeehivePagerAdapter(this, childFragmentManager, tabLayout.tabCount, beehive!!)
 
         viewPager.adapter = adapter
 
@@ -80,9 +80,9 @@ class BeehiveDetailsFragment : Fragment() {
     }
 
     private fun setInitialData() {
-        val jsonApiary = arguments?.getString("beehive")
-        if (jsonApiary != null) {
-            beehive = Gson().fromJson(jsonApiary, BeehiveResponse::class.java)
+        val jsonBeehive = arguments?.getString("beehive")
+        if (jsonBeehive != null) {
+            beehive = Gson().fromJson(jsonBeehive, BeehiveResponse::class.java)
         }
     }
 
