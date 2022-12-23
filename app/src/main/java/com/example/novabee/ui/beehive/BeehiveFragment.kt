@@ -51,7 +51,16 @@ class BeehiveFragment : Fragment() {
         beehiveViewModel.getBeehives(apiary!!._id)
         binding.beehiveList.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         binding.beehiveList.adapter = adapter
+        binding.addBeehive.setOnClickListener{
+            val bundle = Bundle()
+            bundle.putString("apiaryId", apiary!!._id)
+            findNavController().navigate(R.id.action_beehiveFragment_to_beehiveFormFragment, bundle)
+        }
+
+
     }
+
+
 
     private fun setInitialData() {
         val jsonApiary = arguments?.getString("apiary")

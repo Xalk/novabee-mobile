@@ -37,7 +37,9 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_beehiveFragment"
-            app:destination="@id/beehiveFragment" />
+            app:destination="@id/beehiveFragment"
+            app:popUpTo="@id/beehiveFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/beehiveFragment"
@@ -47,10 +49,22 @@
         <action
             android:id="@+id/action_beehiveFragment_to_beehiveDetails"
             app:destination="@id/beehiveDetails" />
+        <action
+            android:id="@+id/action_beehiveFragment_to_beehiveFormFragment"
+            app:destination="@id/beehiveFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/beehiveDetails"
         android:name="com.example.novabee.ui.beehiveDetails.BeehiveDetailsFragment"
         android:label="fragment_beehive_details"
-        tools:layout="@layout/fragment_beehive_details" />
+        tools:layout="@layout/fragment_beehive_details" >
+        <action
+            android:id="@+id/action_beehiveDetails_to_beehiveFormFragment"
+            app:destination="@id/beehiveFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beehiveFormFragment"
+        android:name="com.example.novabee.BeehiveFormFragment"
+        android:label="fragment_beehive_form"
+        tools:layout="@layout/fragment_beehive_form" />
 </navigation>

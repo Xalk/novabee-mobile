@@ -12,9 +12,9 @@ class QueenViewModel @Inject constructor(private val queenRepository: QueenRepos
     ViewModel() {
 
     val queenLiveData get() = queenRepository.queenLiveData
-    val statusLiveDara get() = queenRepository.statusLiveData
+    val statusLiveData get() = queenRepository.statusLiveData
 
-    fun getBeehives(apiaryId: String, beehiveId: String) {
+    fun getQueen(apiaryId: String, beehiveId: String) {
         viewModelScope.launch {
             queenRepository.getQueen(apiaryId, beehiveId)
         }

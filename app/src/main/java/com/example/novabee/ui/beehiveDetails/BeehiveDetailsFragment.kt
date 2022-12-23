@@ -1,18 +1,26 @@
 package com.example.novabee.ui.beehiveDetails
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.example.novabee.R
+import com.example.novabee.api.BeehiveAPI
 import com.example.novabee.databinding.FragmentBeehiveDetailsBinding
 import com.example.novabee.models.BeehiveResponse
+import com.example.novabee.ui.beehive.BeehiveViewModel
 import com.example.novabee.utils.Constants
 import com.example.novabee.utils.Constants.TAG
+import com.example.novabee.utils.NetworkResult
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,6 +35,8 @@ class BeehiveDetailsFragment : Fragment() {
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager
 
+    private val beehiveViewModel by viewModels<BeehiveViewModel>()
+    private val beehiveDetailsViewModel by viewModels<BeehiveDetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,19 +45,16 @@ class BeehiveDetailsFragment : Fragment() {
     ): View? {
 
         _binding = FragmentBeehiveDetailsBinding.inflate(inflater, container, false)
-
-
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setInitialData()
+        bindObservers()
+        beehiveDetailsViewModel.getBeehive(beehive!!.apiary, beehive!!._id)
 
-        binding.textView.text = beehive!!.name
 
-        Log.d(TAG, "beehive" + beehive.toString())
 
         tabLayout = view.findViewById(R.id.tabLayout)
         viewPager = view.findViewById(R.id.viewPager)
@@ -76,14 +83,74 @@ class BeehiveDetailsFragment : Fragment() {
 
         })
 
+        binding.deleteBtn.setOnClickListener {
+            onAlertDialog(view)
+        }
 
     }
 
+
+
+
     private fun setInitialData() {
+
+
         val jsonBeehive = arguments?.getString("beehive")
         if (jsonBeehive != null) {
             beehive = Gson().fromJson(jsonBeehive, BeehiveResponse::class.java)
         }
+
+
+    }
+
+    fun onAlertDialog(view: View) {
+        //Instantiate builder variable
+        val builder = AlertDialog.Builder(view.context)
+
+        // set title
+        builder.setTitle("Delete")
+
+        //set content area
+        builder.setMessage("Are you sure you want to delete this beehive?")
+
+        //set negative button
+        builder.setPositiveButton(
+            "Delete"
+        ) { dialog, id ->
+            beehive.let {
+                beehiveViewModel.deleteBeehive(it!!.apiary, it._id)
+            }
+            findNavController().popBackStack()
+            Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
+        }
+
+        //set positive button
+        builder.setNegativeButton(
+            "Cancel"
+        ) { dialog, id ->
+            // User cancelled the dialog
+        }
+
+        builder.show()
+    }
+
+    private fun bindObservers() {
+        beehiveDetailsViewModel.beehiveLiveData.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is NetworkResult.Success -> {
+//                    beehive = it.data
+                    binding.textView.text = it.data!!.name
+                }
+                is NetworkResult.Error -> {
+                    Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)
+                        .show()
+                }
+                is NetworkResult.Loading -> {
+//                    binding.progressBar.isVisible = true
+                }
+
+            }
+        })
     }
 
 

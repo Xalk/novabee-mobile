@@ -25,6 +25,7 @@ internal class BeehivePagerAdapter(
             0 -> {
                 val bundle = Bundle()
                 bundle.putString("info", Gson().toJson(beehiveResponse))
+                bundle.putString("apiaryId", beehiveResponse.apiary)
                 val fragment = InfoFragment()
                 fragment.arguments = bundle
 

@@ -43,7 +43,7 @@ class QueenFragment() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setBeehiveData()
         bindObservers()
-        queenViewModel.getBeehives(beehive!!.apiary, beehive!!._id)
+        queenViewModel.getQueen(beehive!!.apiary, beehive!!._id)
 
         val testData = arguments?.getString("queen")
         if (testData != null) {
