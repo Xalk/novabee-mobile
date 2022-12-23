@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/drawable/apiary_background.xml" value="0.2465" />
+        <entry key="..\:/projects/mobile/novabee/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2465" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/apiary_item.xml" value="0.6" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/beehive_item.xml" value="0.25" />
@@ -11,7 +12,7 @@
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_beehive_details.xml" value="0.25" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_beehive_info.xml" value="0.25" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_chart.xml" value="0.2359375" />
-        <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_info.xml" value="0.25" />
+        <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_info.xml" value="0.4" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_main.xml" value="0.25" />
         <entry key="..\:/projects/mobile/novabee/app/src/main/res/layout/fragment_queen.xml" value="0.264" />

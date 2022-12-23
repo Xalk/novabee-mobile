@@ -24,7 +24,7 @@ internal class BeehivePagerAdapter(
         return when (position) {
             0 -> {
                 val bundle = Bundle()
-                bundle.putString("info", "testForInfo")
+                bundle.putString("info", Gson().toJson(beehiveResponse))
                 val fragment = InfoFragment()
                 fragment.arguments = bundle
 
@@ -33,7 +33,7 @@ internal class BeehivePagerAdapter(
 
             1 -> {
                 val bundle = Bundle()
-                bundle.putString("chart", "testForChart")
+                bundle.putString("chart", Gson().toJson(beehiveResponse))
                 val fragment = ChartFragment()
                 fragment.arguments = bundle
 
