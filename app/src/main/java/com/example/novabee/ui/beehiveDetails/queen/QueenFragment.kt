@@ -5,11 +5,13 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.novabee.R
 import com.example.novabee.databinding.FragmentBeehiveBinding
 import com.example.novabee.databinding.FragmentQueenBinding
@@ -47,7 +49,11 @@ class QueenFragment() : Fragment() {
 
         val testData = arguments?.getString("queen")
         if (testData != null) {
-            Log.d(Constants.TAG, testData + "QUEEN")
+//            Log.d(Constants.TAG, testData + "QUEEN")
+        }
+
+        binding.edit.setOnClickListener{
+            findNavController().navigate(R.id.action_beehiveDetails_to_queenFormFragment)
         }
     }
 
@@ -64,6 +70,8 @@ class QueenFragment() : Fragment() {
 //            binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
+                    binding.add.visibility = INVISIBLE
+                    Log.d(Constants.TAG, it.data!!.toString()+ "QUEEN" )
                     binding.queenName.text = it.data!!.name
                     binding.description.text = it.data.description
                     binding.introduced.text = it.data.introducedFrom
@@ -72,6 +80,11 @@ class QueenFragment() : Fragment() {
                 is NetworkResult.Error -> {
                     Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)
                         .show()
+                    binding.queenName.text = "-"
+                    binding.description.text = "-"
+                    binding.introduced.text = "-"
+                    binding.isOut.text = "-"
+                    binding.edit.visibility = INVISIBLE
                 }
                 is NetworkResult.Loading -> {
 //                    binding.progressBar.isVisible = true

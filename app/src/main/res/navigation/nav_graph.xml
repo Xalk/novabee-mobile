@@ -67,10 +67,18 @@
             app:destination="@id/beehiveFormFragment"
             app:popUpTo="@id/beehiveFormFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_beehiveDetails_to_queenFormFragment"
+            app:destination="@id/queenFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/beehiveFormFragment"
         android:name="com.example.novabee.BeehiveFormFragment"
         android:label="fragment_beehive_form"
         tools:layout="@layout/fragment_beehive_form" />
+    <fragment
+        android:id="@+id/queenFormFragment"
+        android:name="com.example.novabee.QueenFormFragment"
+        android:label="fragment_queen_form"
+        tools:layout="@layout/fragment_queen_form" />
 </navigation>

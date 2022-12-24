@@ -10,20 +10,24 @@
     <!-- TODO: Update blank fragment layout -->
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365">
+        app:layout_constraintVertical_bias="0.001">
 
         <ImageView
             android:id="@+id/queenIv"
             android:layout_width="104dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/ic_queen" />
+            app:srcCompat="@drawable/ic_queen"
+            android:layout_marginStart="8dp"
+            />
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -110,5 +114,29 @@
         </TableLayout>
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        android:drawableLeft="@drawable/ic_baseline_edit_24"
+        />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/ic_baseline_add_24"
+        android:drawableTint="#FFFFFF"
+        android:text="Add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
