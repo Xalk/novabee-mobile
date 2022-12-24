@@ -13,7 +13,6 @@ import javax.inject.Inject
 class BeehiveViewModel  @Inject constructor(private val beehiveRepository: BeehiveRepository): ViewModel(){
 
     val beehiveLiveData get() = beehiveRepository.beehiveLiveData
-    val beehiveInfoLiveData get() = beehiveRepository.beehiveInfoLiveData
 
     val statusLiveData get() = beehiveRepository.statusLiveData
 
@@ -23,27 +22,22 @@ class BeehiveViewModel  @Inject constructor(private val beehiveRepository: Beehi
         }
     }
 
-    fun createBeehive(apiaryId: String, beehiveRequest: BeehiveRequest) {
-        viewModelScope.launch {
-            beehiveRepository.createBeehive(apiaryId, beehiveRequest)
-        }
-    }
-    fun updateBeehive(apiaryId: String, beehiveId: String,  beehiveRequest: BeehiveRequest){
-        viewModelScope.launch {
-            beehiveRepository.updateBeehive(apiaryId, beehiveId, beehiveRequest)
-        }
-    }
+//    fun createBeehive(apiaryId: String, beehiveRequest: BeehiveRequest) {
+//        viewModelScope.launch {
+//            beehiveRepository.createBeehive(apiaryId, beehiveRequest)
+//        }
+//    }
+//    fun updateBeehive(apiaryId: String, beehiveId: String,  beehiveRequest: BeehiveRequest){
+//        viewModelScope.launch {
+//            beehiveRepository.updateBeehive(apiaryId, beehiveId, beehiveRequest)
+//        }
+//    }
+//
+//    fun deleteBeehive(apiaryId: String, beehiveId: String) {
+//        viewModelScope.launch {
+//            beehiveRepository.deleteBeehive(apiaryId, beehiveId)
+//        }
+//    }
 
-    fun deleteBeehive(apiaryId: String, beehiveId: String) {
-        viewModelScope.launch {
-            beehiveRepository.deleteBeehive(apiaryId, beehiveId)
-        }
-    }
-
-    suspend fun getBeehive(apiaryId: String, beehiveId: String) {
-        viewModelScope.launch {
-            beehiveRepository.getBeehive(apiaryId, beehiveId)
-        }
-    }
 
 }

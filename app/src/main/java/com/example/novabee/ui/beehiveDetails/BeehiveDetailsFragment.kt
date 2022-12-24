@@ -118,7 +118,7 @@ class BeehiveDetailsFragment : Fragment() {
             "Delete"
         ) { dialog, id ->
             beehive.let {
-                beehiveViewModel.deleteBeehive(it!!.apiary, it._id)
+                beehiveDetailsViewModel.deleteBeehive(it!!.apiary, it._id)
             }
             findNavController().popBackStack()
             Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
@@ -135,7 +135,7 @@ class BeehiveDetailsFragment : Fragment() {
     }
 
     private fun bindObservers() {
-        beehiveDetailsViewModel.beehiveLiveData.observe(viewLifecycleOwner, Observer {
+        beehiveDetailsViewModel.oneBeehiveLiveData.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is NetworkResult.Success -> {
 //                    beehive = it.data

@@ -59,10 +59,10 @@ class InfoFragment() : Fragment() {
     }
 
     private fun bindObservers() {
-        beehiveDetailsViewModel.beehiveLiveData.observe(viewLifecycleOwner, Observer {
+        beehiveDetailsViewModel.oneBeehiveLiveData.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is NetworkResult.Success -> {
-//                    beehive = it.data
+                    beehive = it.data
                     binding.description.text = it.data!!.description
 
                     binding.createdAt.text = it.data!!.createdAt

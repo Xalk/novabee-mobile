@@ -48,10 +48,14 @@
         tools:layout="@layout/fragment_beehive" >
         <action
             android:id="@+id/action_beehiveFragment_to_beehiveDetails"
-            app:destination="@id/beehiveDetails" />
+            app:destination="@id/beehiveDetails"
+            app:popUpTo="@id/beehiveDetails"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_beehiveFragment_to_beehiveFormFragment"
-            app:destination="@id/beehiveFormFragment" />
+            app:destination="@id/beehiveFormFragment"
+            app:popUpTo="@id/beehiveFormFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/beehiveDetails"
@@ -60,7 +64,9 @@
         tools:layout="@layout/fragment_beehive_details" >
         <action
             android:id="@+id/action_beehiveDetails_to_beehiveFormFragment"
-            app:destination="@id/beehiveFormFragment" />
+            app:destination="@id/beehiveFormFragment"
+            app:popUpTo="@id/beehiveFormFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/beehiveFormFragment"
