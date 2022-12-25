@@ -103,7 +103,7 @@ class BeehiveDetailsFragment : Fragment() {
 
     }
 
-    fun onAlertDialog(view: View) {
+    private fun onAlertDialog(view: View) {
         //Instantiate builder variable
         val builder = AlertDialog.Builder(view.context)
 

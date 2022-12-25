@@ -11,12 +11,12 @@ interface ApiaryAPI {
     suspend fun getApiaries(): Response<List<ApiaryResponse>>
 
     @POST("api/apiary")
-    suspend fun createApiary(apiaryRequest: ApiaryRequest): Response<ApiaryResponse>
+    suspend fun createApiary(@Body apiaryRequest: ApiaryRequest): Response<ApiaryResponse>
 
     @PATCH("api/apiary/{apiaryId}")
     suspend fun updateApiary(@Path("apiaryId") apiaryId: String, @Body apiaryRequest: ApiaryRequest): Response<ApiaryResponse>
 
-    @GET("api/apiary/{apiaryId}")
+    @DELETE("api/apiary/{apiaryId}")
     suspend fun deleteApiary(@Path("apiaryId") apiaryId: String): Response<ApiaryResponse>
 
 }

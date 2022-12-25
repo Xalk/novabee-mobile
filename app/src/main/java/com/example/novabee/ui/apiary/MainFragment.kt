@@ -43,6 +43,10 @@ class MainFragment : Fragment() {
         apiaryViewModel.getApiaries()
         binding.apiaryList.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         binding.apiaryList.adapter = adapter
+
+        binding.addApiary.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_apiaryFormFragment)
+        }
     }
 
     private fun bindObservers() {

@@ -40,6 +40,11 @@
             app:destination="@id/beehiveFragment"
             app:popUpTo="@id/beehiveFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_apiaryFormFragment"
+            app:destination="@id/apiaryFormFragment"
+            app:popUpTo="@id/apiaryFormFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/beehiveFragment"
@@ -56,6 +61,11 @@
             app:destination="@id/beehiveFormFragment"
             app:popUpTo="@id/beehiveFormFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_beehiveFragment_to_apiaryFormFragment"
+            app:destination="@id/apiaryFormFragment"
+            app:popUpTo="@id/apiaryFormFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/beehiveDetails"
@@ -69,7 +79,9 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_beehiveDetails_to_queenFormFragment"
-            app:destination="@id/queenFormFragment" />
+            app:destination="@id/queenFormFragment"
+            app:popUpTo="@id/queenFormFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/beehiveFormFragment"
@@ -81,4 +93,9 @@
         android:name="com.example.novabee.QueenFormFragment"
         android:label="fragment_queen_form"
         tools:layout="@layout/fragment_queen_form" />
+    <fragment
+        android:id="@+id/apiaryFormFragment"
+        android:name="com.example.novabee.ApiaryFormFragment"
+        android:label="fragment_apiary_form"
+        tools:layout="@layout/fragment_apiary_form" />
 </navigation>
