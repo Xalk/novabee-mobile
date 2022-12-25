@@ -24,6 +24,7 @@ class BeehiveFormFragment : Fragment() {
     private var _binding: FragmentBeehiveFormBinding? = null
     private val binding get() = _binding!!
     private var beehive: BeehiveResponse? = null
+    private var apiaryId: String? = null
 
     private val beehiveViewModel by viewModels<BeehiveDetailsViewModel>()
 
@@ -51,13 +52,13 @@ class BeehiveFormFragment : Fragment() {
             val description = binding.txtDescription.text.toString()
             val deviceId = binding.txtDeviceId.text.toString()
             val beehiveRequest = BeehiveRequest(description, deviceId, name)
-            val apiaryId = arguments?.getString("apiaryId")
 
 
-            if (beehive == null && apiaryId != null) {
+
+            if (beehive == null) {
                 beehive.let {
-                    Log.d(TAG, "Created beehive")
-                    beehiveViewModel.createBeehive(apiaryId, beehiveRequest)
+                    Log.d(TAG, "Created beehive" + apiaryId!!)
+                    beehiveViewModel.createBeehive(apiaryId!!, beehiveRequest)
                 }
                 findNavController().popBackStack()
             } else {
@@ -78,6 +79,11 @@ class BeehiveFormFragment : Fragment() {
             }
         } else {
             binding.addEditText.text = "Add Beehive"
+        }
+
+        val jsonApiaryId = arguments?.getString("apiaryId")
+        if (jsonApiaryId != null){
+            apiaryId = jsonApiaryId
         }
     }
 

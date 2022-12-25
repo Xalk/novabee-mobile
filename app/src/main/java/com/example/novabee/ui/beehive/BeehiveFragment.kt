@@ -51,6 +51,7 @@ class BeehiveFragment : Fragment() {
 
         setInitialData()
         bindObservers()
+        Log.d(TAG, "BEEHIVE FRAGMENT" + apiary!!.toString())
         beehiveViewModel.getBeehives(apiary!!._id)
         binding.beehiveList.layoutManager =
             StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
