@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.novabee.databinding.FragmentBeehiveFormBinding
 import com.example.novabee.databinding.FragmentInfoBinding
+import com.example.novabee.models.ApiaryResponse
 import com.example.novabee.models.BeehiveRequest
 import com.example.novabee.models.BeehiveResponse
 import com.example.novabee.ui.beehive.BeehiveViewModel
@@ -24,7 +25,7 @@ class BeehiveFormFragment : Fragment() {
     private var _binding: FragmentBeehiveFormBinding? = null
     private val binding get() = _binding!!
     private var beehive: BeehiveResponse? = null
-    private var apiaryId: String? = null
+    private var apiary: ApiaryResponse? = null
 
     private val beehiveViewModel by viewModels<BeehiveDetailsViewModel>()
 
@@ -57,10 +58,15 @@ class BeehiveFormFragment : Fragment() {
 
             if (beehive == null) {
                 beehive.let {
-                    Log.d(TAG, "Created beehive" + apiaryId!!)
-                    beehiveViewModel.createBeehive(apiaryId!!, beehiveRequest)
+                    Log.d(TAG, "Created beehive" + apiary!!._id)
+                    beehiveViewModel.createBeehive(apiary!!._id, beehiveRequest)
                 }
-                findNavController().popBackStack()
+
+
+                findNavController().navigate(R.id.mainFragment)
+
+
+
             } else {
                 beehiveViewModel.updateBeehive(beehive!!.apiary, beehive!!._id, beehiveRequest)
                 findNavController().popBackStack()
@@ -81,9 +87,9 @@ class BeehiveFormFragment : Fragment() {
             binding.addEditText.text = "Add Beehive"
         }
 
-        val jsonApiaryId = arguments?.getString("apiaryId")
-        if (jsonApiaryId != null){
-            apiaryId = jsonApiaryId
+        val jsonApiary = arguments?.getString("apiaryId")
+        if (jsonApiary != null){
+            apiary = Gson().fromJson(jsonApiary, ApiaryResponse::class.java)
         }
     }
 

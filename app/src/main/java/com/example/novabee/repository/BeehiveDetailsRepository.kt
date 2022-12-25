@@ -3,6 +3,7 @@ package com.example.novabee.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.novabee.api.BeehiveAPI
+import com.example.novabee.models.ApiaryResponse
 import com.example.novabee.models.BeehiveRequest
 import com.example.novabee.models.BeehiveResponse
 import com.example.novabee.utils.NetworkResult
@@ -16,9 +17,15 @@ class BeehiveDetailsRepository @Inject constructor(private val beehiveAPI: Beehi
     val oneBeehiveLiveData: LiveData<NetworkResult<BeehiveResponse>>
         get() = _oneBeehiveLiveData
 
+
     private val _statusLiveData = MutableLiveData<NetworkResult<String>>()
     val statusLiveData: LiveData<NetworkResult<String>>
         get() = _statusLiveData
+
+
+    private val _beehivesLiveData = MutableLiveData<NetworkResult<List<BeehiveResponse>>>()
+    val beehivesLiveData: LiveData<NetworkResult<List<BeehiveResponse>>>
+        get() = _beehivesLiveData
 
 
     suspend fun getBeehive(apiaryId: String, beehiveId: String) {
@@ -54,6 +61,18 @@ class BeehiveDetailsRepository @Inject constructor(private val beehiveAPI: Beehi
     }
 
 
+    suspend fun getBeehives(apiaryId: String) {
+        _statusLiveData.postValue(NetworkResult.Loading())
+        val response = beehiveAPI.getBeehives(apiaryId)
+        if (response.isSuccessful && response.body() != null) {
+            _beehivesLiveData.postValue(NetworkResult.Success(response.body()!!))
+        } else if (response.errorBody() != null) {
+            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+            _beehivesLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
+        } else {
+            _beehivesLiveData.postValue(NetworkResult.Error("Something went wrong"))
+        }
+    }
 
 
     private fun handleResponse(response: Response<BeehiveResponse>, message: String) {

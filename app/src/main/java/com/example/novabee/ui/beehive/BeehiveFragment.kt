@@ -18,6 +18,7 @@ import com.example.novabee.databinding.FragmentBeehiveBinding
 import com.example.novabee.models.ApiaryResponse
 import com.example.novabee.models.BeehiveResponse
 import com.example.novabee.ui.apiary.ApiaryViewModel
+import com.example.novabee.ui.beehiveDetails.BeehiveDetailsViewModel
 import com.example.novabee.utils.Constants.TAG
 import com.example.novabee.utils.NetworkResult
 import com.google.gson.Gson
@@ -30,7 +31,7 @@ class BeehiveFragment : Fragment() {
     private val binding get() = _binding!!
     private var apiary: ApiaryResponse? = null
 
-    private val beehiveViewModel by viewModels<BeehiveViewModel>()
+    private val beehiveDetailsViewModel by viewModels<BeehiveDetailsViewModel>()
     private val apiaryViewModel by viewModels<ApiaryViewModel>()
 
     private lateinit var adapter: BeehiveAdapter
@@ -49,16 +50,20 @@ class BeehiveFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         setInitialData()
         bindObservers()
         Log.d(TAG, "BEEHIVE FRAGMENT" + apiary!!.toString())
-        beehiveViewModel.getBeehives(apiary!!._id)
+        beehiveDetailsViewModel.getBeehives(apiary!!._id)
+
+
+
         binding.beehiveList.layoutManager =
             StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         binding.beehiveList.adapter = adapter
         binding.addBeehive.setOnClickListener {
             val bundle = Bundle()
-            bundle.putString("apiaryId", apiary!!._id)
+            bundle.putString("apiaryId", Gson().toJson(apiary))
             findNavController().navigate(R.id.action_beehiveFragment_to_beehiveFormFragment, bundle)
         }
 
@@ -117,7 +122,7 @@ class BeehiveFragment : Fragment() {
     }
 
     private fun bindObservers() {
-        beehiveViewModel.beehiveLiveData.observe(viewLifecycleOwner, Observer {
+        beehiveDetailsViewModel.beehivesLiveData.observe(viewLifecycleOwner, Observer {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {

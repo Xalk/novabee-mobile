@@ -14,6 +14,11 @@ class BeehiveDetailsViewModel @Inject constructor(private val beehiveDetailsRepo
     ViewModel() {
 
     val oneBeehiveLiveData get() = beehiveDetailsRepository.oneBeehiveLiveData
+
+
+    val beehivesLiveData get() = beehiveDetailsRepository.beehivesLiveData
+
+
     val statusLiveData get() = beehiveDetailsRepository.statusLiveData
 
     fun getBeehive(apiaryId: String, beehiveId: String) {
@@ -38,5 +43,12 @@ class BeehiveDetailsViewModel @Inject constructor(private val beehiveDetailsRepo
             beehiveDetailsRepository.deleteBeehive(apiaryId, beehiveId)
         }
     }
+
+    fun getBeehives(apiaryId: String){
+        viewModelScope.launch {
+            beehiveDetailsRepository.getBeehives(apiaryId)
+        }
+    }
+
 
 }
