@@ -1,59 +1,117 @@
 package com.example.novabee
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker.OnDateChangedListener
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.novabee.databinding.FragmentQueenFormBinding
+import com.example.novabee.models.BeehiveRequest
+import com.example.novabee.models.BeehiveResponse
+import com.example.novabee.models.QueenRequest
+import com.example.novabee.models.QueenResponse
+import com.example.novabee.ui.beehiveDetails.BeehiveDetailsViewModel
+import com.example.novabee.ui.beehiveDetails.queen.QueenViewModel
+import com.example.novabee.utils.Constants
+import com.google.gson.Gson
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [QueenFormFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class QueenFormFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentQueenFormBinding? = null
+    private val binding get() = _binding!!
+    private var queen: QueenResponse? = null
+
+    private var beehive: BeehiveResponse? = null
+
+    private val queenViewModel by viewModels<QueenViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_queen_form, container, false)
+
+        _binding = FragmentQueenFormBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment QueenFormFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            QueenFormFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setInitialData()
+        bindHandlers()
     }
+
+    private fun bindHandlers() {
+
+
+        binding.btnSubmit.setOnClickListener {
+            val name = binding.txtName.text.toString()
+
+
+            val introduced =
+                "${binding.datePicker.year}-${binding.datePicker.month}-${binding.datePicker.dayOfMonth}"
+
+            val isOut = binding.checkBox.isChecked
+            val description = binding.txtDescription.text.toString()
+
+            val queenRequest = QueenRequest(name, introduced, isOut, description)
+
+            if (queen == null && beehive != null) {
+                queen.let {
+                    queenViewModel.createQueen(beehive!!.apiary, beehive!!._id, queenRequest)
+                }
+                findNavController().popBackStack()
+            } else {
+                queenViewModel.updateQueen(beehive!!.apiary, beehive!!._id, queenRequest)
+                findNavController().popBackStack()
+            }
+
+        }
+    }
+
+    private fun setInitialData() {
+        val jsonQueen = arguments?.getString("qEdit")
+
+        if (jsonQueen != null) {
+            queen = Gson().fromJson(jsonQueen, QueenResponse::class.java)
+            queen?.let {
+                binding.txtName.setText(it.name)
+
+                val date = it.introducedFrom.split("-")
+
+                binding.datePicker.init(
+                    date[0].toInt(),
+                    date[1].toInt(),
+                    date[2].substring(0, 2).toInt(),
+                    datePickerListener
+                )
+                binding.checkBox.isChecked = it.isOut
+                binding.txtDescription.setText(it.description)
+            }
+        } else {
+            binding.addEditText.text = "Add Queen"
+        }
+
+
+        val jsonBeehive = arguments?.getString("qBeehive")
+        if (jsonBeehive != null) {
+            beehive = Gson().fromJson(jsonBeehive, BeehiveResponse::class.java)
+        }
+    }
+
+    private var datePickerListener =
+        OnDateChangedListener { birthDayDatePicker, newYear, newMonth, newDay ->
+        }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }

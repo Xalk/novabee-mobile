@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
@@ -16,6 +17,7 @@ import com.example.novabee.R
 import com.example.novabee.databinding.FragmentBeehiveBinding
 import com.example.novabee.databinding.FragmentQueenBinding
 import com.example.novabee.models.BeehiveResponse
+import com.example.novabee.models.QueenResponse
 import com.example.novabee.ui.beehive.BeehiveViewModel
 import com.example.novabee.utils.Constants
 import com.example.novabee.utils.NetworkResult
@@ -29,6 +31,9 @@ class QueenFragment() : Fragment() {
     private val binding get() = _binding!!
 
     private var beehive: BeehiveResponse? = null
+    private var queen: QueenResponse? = null
+
+
     private val queenViewModel by viewModels<QueenViewModel>()
 
     override fun onCreateView(
@@ -53,8 +58,18 @@ class QueenFragment() : Fragment() {
         }
 
         binding.edit.setOnClickListener{
-            findNavController().navigate(R.id.action_beehiveDetails_to_queenFormFragment)
+            val bundle = Bundle()
+            bundle.putString("qEdit", Gson().toJson(queen))
+            bundle.putString("qBeehive", Gson().toJson(beehive))
+            findNavController().navigate(R.id.action_beehiveDetails_to_queenFormFragment, bundle)
         }
+
+        binding.add.setOnClickListener{
+            val bundle = Bundle()
+            bundle.putString("qBeehive", Gson().toJson(beehive))
+            findNavController().navigate(R.id.action_beehiveDetails_to_queenFormFragment, bundle)
+        }
+
     }
 
 
@@ -67,12 +82,14 @@ class QueenFragment() : Fragment() {
 
     private fun bindObservers() {
         queenViewModel.queenLiveData.observe(viewLifecycleOwner, Observer {
+            binding.edit.visibility = VISIBLE
 //            binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    binding.add.visibility = INVISIBLE
+                    queen = it!!.data
                     Log.d(Constants.TAG, it.data!!.toString()+ "QUEEN" )
-                    binding.queenName.text = it.data!!.name
+                    binding.add.visibility = INVISIBLE
+                    binding.queenName.text = it.data.name
                     binding.description.text = it.data.description
                     binding.introduced.text = it.data.introducedFrom
                     binding.isOut.text = it.data.isOut.toString()

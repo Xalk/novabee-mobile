@@ -3,9 +3,13 @@ package com.example.novabee.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.novabee.api.QueenAPI
+import com.example.novabee.models.BeehiveRequest
+import com.example.novabee.models.BeehiveResponse
+import com.example.novabee.models.QueenRequest
 import com.example.novabee.models.QueenResponse
 import com.example.novabee.utils.NetworkResult
 import org.json.JSONObject
+import retrofit2.Response
 import javax.inject.Inject
 
 class QueenRepository @Inject constructor(private val queenAPI: QueenAPI) {
@@ -28,6 +32,26 @@ class QueenRepository @Inject constructor(private val queenAPI: QueenAPI) {
             _queenLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
         } else {
             _queenLiveData.postValue(NetworkResult.Error("Something went wrong"))
+        }
+    }
+
+    suspend fun createQueen(apiaryId: String, beehiveId: String, queenRequest: QueenRequest) {
+        _statusLiveData.postValue(NetworkResult.Loading())
+        val response = queenAPI.createQueen(apiaryId, beehiveId, queenRequest)
+        handleResponse(response, "Beehive Created")
+    }
+
+    suspend fun updateQueen(apiaryId: String, beehiveId: String, queenRequest: QueenRequest) {
+        _statusLiveData.postValue(NetworkResult.Loading())
+        val response = queenAPI.updateQueen(apiaryId, beehiveId, queenRequest)
+        handleResponse(response, "Beehive Updated")
+    }
+
+    private fun handleResponse(response: Response<QueenResponse>, message: String) {
+        if (response.isSuccessful && response.body() != null) {
+            _statusLiveData.postValue(NetworkResult.Success(message))
+        } else {
+            _statusLiveData.postValue(NetworkResult.Success("Something went wrong"))
         }
     }
 
