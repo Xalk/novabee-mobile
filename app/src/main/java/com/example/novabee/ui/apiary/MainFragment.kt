@@ -47,6 +47,10 @@ class MainFragment : Fragment() {
         binding.addApiary.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_apiaryFormFragment)
         }
+
+        binding.settingsBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
+        }
     }
 
     private fun bindObservers() {

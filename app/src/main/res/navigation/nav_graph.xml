@@ -45,6 +45,11 @@
             app:destination="@id/apiaryFormFragment"
             app:popUpTo="@id/apiaryFormFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/settingsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/beehiveFragment"
@@ -98,4 +103,9 @@
         android:name="com.example.novabee.ApiaryFormFragment"
         android:label="fragment_apiary_form"
         tools:layout="@layout/fragment_apiary_form" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.novabee.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

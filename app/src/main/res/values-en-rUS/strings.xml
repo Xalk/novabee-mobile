@@ -1,29 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Novabee</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="txt_no_account_signup" translatable="false">Don\'t have an account? <font color="#2196F3">Register Now</font></string>
-    <string name="txt_register_header" translatable="false">Create New Account</string>
-    <string name="txt_register_subheader" translatable="false">Please provide all the required information</string>
-    <string name="txt_username" translatable="false">Username</string>
-    <string name="txt_username_hint" translatable="false">username</string>
-    <string name="txt_email" translatable="false">Email</string>
-    <string name="txt_email_hint" translatable="false">example@gmail.com</string>
-    <string name="txt_password" translatable="false">Password</string>
-    <string name="txt_password_hint" translatable="false">........</string>
-    <string name="txt_sign_up" translatable="false">Sign Up</string>
-    <string name="txt_already_have_account" translatable="false">Already have an account?</string>
-    <string name="txt_login_header" translatable="false">Welcome Back!</string>
-    <string name="txt_login_subheader" translatable="false">Login to access your notes</string>
-    <string name="txt_login" translatable="false">Login</string>
-    <string name="txt_error_message" translatable="false">%1$S*</string>
-    <string name="note_title" translatable="false">Title</string>
-    <string name="txt_title_hint" translatable="false">Write your title</string>
-    <string name="txt_description" translatable="false">Description</string>
-    <string name="txt_description_hint" translatable="false">Write your description</string>
-
-    <string name="add_note" translatable="false">Add Note</string>
-
     <string name="txt_my_apiaries">My Apiaries</string>
     <string name="txt_my_beehives">My Beehives</string>
 
@@ -136,5 +112,4 @@
     <!--  Buttons  -->
 
     <string name="txt_settings_title">Settings</string>
-
 </resources>
