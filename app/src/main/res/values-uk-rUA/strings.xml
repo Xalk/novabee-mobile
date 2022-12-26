@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_my_apiaries">Мої Пасіки</string>
+    <string name="txt_my_beehives">Мої Вулики</string>
+
+    <!--  Apiary Form  -->
+    <string name="txt_edit_apiary">Редагувати пасіку</string>
+    <string name="txt_add_apiary">Додати пасіку</string>
+
+    <string name="txt_name_apiary">Назва</string>
+    <string name="txt_name_apiary_hint">Напишіть свою назву</string>
+
+    <string name="txt_description_apiary">Опис</string>
+    <string name="txt_description_apiary_hint">Напишіть свій опис</string>
+
+
+
+    <!--  Beehive Form  -->
+
+    <string name="txt_edit_beehive">Редагувати вулик</string>
+    <string name="txt_add_beehive">Додати вулик</string>
+
+    <string name="txt_name_beehive">Назва</string>
+    <string name="txt_name_beehive_hint">Напишіть свою назву</string>
+
+    <string name="txt_device_beehive">Пристрій (необов\'язково)</string>
+    <string name="txt_device_beehive_hint">Напишіть ID свого пристрою</string>
+
+    <string name="txt_description_beehive">Опис</string>
+    <string name="txt_description_beehive_hint">Напишіть свій опис</string>
+
+
+    <!--  Beehive Details  -->
+
+    <string name="txt_description_details">Опис:</string>
+    <string name="txt_created_details">Створено в:</string>
+    <string name="txt_device_details">Пристрій</string>
+    <string name="txt_device_state_details_on">Підключено</string>
+    <string name="txt_device_state_details_off">Відключено</string>
+
+    <!--  Queen  -->
+
+    <string name="txt_name_queen">Назва:</string>
+    <string name="txt_description_queen">Назва:</string>
+    <string name="txt_introduced_queen">Введено:</string>
+    <string name="txt_isOut_queen">Відсутня:</string>
+    <string name="txt_isOut_queen_yes">Так</string>
+    <string name="txt_isOut_queen_no">Ні</string>
+
+    <!--  Queen Form -->
+
+    <string name="txt_add_queen_form">Додати королеву</string>
+    <string name="txt_edit_queen_form">Редагувати королеву</string>
+
+    <string name="txt_name_queen_form">Назва</string>
+    <string name="txt_name_queen_form_hint">Напишіть свою назву</string>
+
+
+    <string name="txt_description_queen_form">Опис</string>
+    <string name="txt_description_queen_form_hint">Напишіть свій опис</string>
+
+    <string name="txt_introduced_queen_form">Введено</string>
+
+    <string name="txt_isOut_queen_form_title">Чи є королева у вулику?</string>
+    <string name="txt_isOut_queen_form">Відсутня:</string>
+
+    <!--  Tabs  -->
+
+    <string name="txt_tab_info_details">Опис</string>
+    <string name="txt_tab_chart_details">Графік</string>
+    <string name="txt_tab_queen_details">Королева</string>
+
+
+    <!--  Alert Dialog  -->
+
+    <string name="txt_alert_apiary_delete">Ви впевнені, що хочете видалити цю пасіку з вуликами?</string>
+    <string name="txt_alert_beehive_delete">Ви впевнені, що хочете видалити цей вулик?</string>
+
+    <string name="txt_alert_title">Видалити</string>
+    <string name="txt_alert_cancel">Скасувати</string>
+    <string name="txt_alert_delete_ok">Успішно видалено</string>
+
+    <!--  Login  -->
+
+    <string name="txt_login_title">З поверненням!</string>
+    <string name="txt_login_subtitle">Увійдіть, щоб отримати доступ до своїх пасік</string>
+    <string name="txt_login_username">Ім\'я користувача</string>
+    <string name="txt_login_email">Електронна пошта</string>
+    <string name="txt_login_password">Пароль</string>
+    <string name="txt_login_hint">Вже є аккаунт?</string>
+
+    <!--  Register  -->
+
+    <string name="txt_register_title">Створити новий акаунт</string>
+    <string name="txt_register_subtitle">Будь ласка, надайте всю необхідну інформацію</string>
+    <string name="txt_register_hint">Немає облікового запису? Зареєструватися зараз</string>
+
+    <!--  Validation  -->
+
+
+    <string name="txt_valid_all_credentials">Будь ласка, надайте всі необхідні дані</string>
+    <string name="txt_valid_email">Невірна електронна адреса</string>
+    <string name="txt_valid_password_length">Довжина пароля має бути більше 5 символів</string>
+
+    <!--  Buttons  -->
+
+    <string name="txt_btn_add">Додати</string>
+    <string name="txt_btn_edit">Редагувати</string>
+    <string name="txt_submit">Зберегти</string>
+    <string name="txt_signIn">Увійти</string>
+    <string name="txt_signUp">Зареєструватися</string>
+
+</resources>

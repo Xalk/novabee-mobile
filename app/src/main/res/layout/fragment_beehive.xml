@@ -14,7 +14,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/sf_pro_display_bold"
-        android:text="Beehives"
+        android:text="@string/txt_my_beehives"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

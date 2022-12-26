@@ -1,26 +1,137 @@
 <resources>
-    <string name="app_name">Novabee</string>
+    <string name="app_name" translatable="false">Novabee</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="txt_no_account_signup">Don\'t have an account? <font color="#2196F3">Register Now</font></string>
-    <string name="txt_register_header">Create New Account</string>
-    <string name="txt_register_subheader">Please provide all the required information</string>
-    <string name="txt_username">Username</string>
-    <string name="txt_username_hint">cheezycode</string>
-    <string name="txt_email">Email</string>
-    <string name="txt_email_hint">cheezycode@gmail.com</string>
-    <string name="txt_password">Password</string>
-    <string name="txt_password_hint">........</string>
-    <string name="txt_sign_up">Sign Up</string>
-    <string name="txt_already_have_account">Already have an account?</string>
-    <string name="txt_login_header">Welcome Back!</string>
-    <string name="txt_login_subheader">Login to access your notes</string>
-    <string name="txt_login">Login</string>
-    <string name="txt_error_message">%1$S*</string>
-    <string name="note_title">Title</string>
-    <string name="txt_title_hint">Write your title</string>
-    <string name="txt_description">Description</string>
-    <string name="txt_description_hint">Write your description</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="txt_no_account_signup" translatable="false">Don\'t have an account? <font color="#2196F3">Register Now</font></string>
+    <string name="txt_register_header" translatable="false">Create New Account</string>
+    <string name="txt_register_subheader" translatable="false">Please provide all the required information</string>
+    <string name="txt_username" translatable="false">Username</string>
+    <string name="txt_username_hint" translatable="false">username</string>
+    <string name="txt_email" translatable="false">Email</string>
+    <string name="txt_email_hint" translatable="false">example@gmail.com</string>
+    <string name="txt_password" translatable="false">Password</string>
+    <string name="txt_password_hint" translatable="false">........</string>
+    <string name="txt_sign_up" translatable="false">Sign Up</string>
+    <string name="txt_already_have_account" translatable="false">Already have an account?</string>
+    <string name="txt_login_header" translatable="false">Welcome Back!</string>
+    <string name="txt_login_subheader" translatable="false">Login to access your notes</string>
+    <string name="txt_login" translatable="false">Login</string>
+    <string name="txt_error_message" translatable="false">%1$S*</string>
+    <string name="note_title" translatable="false">Title</string>
+    <string name="txt_title_hint" translatable="false">Write your title</string>
+    <string name="txt_description" translatable="false">Description</string>
+    <string name="txt_description_hint" translatable="false">Write your description</string>
+
+    <string name="add_note" translatable="false">Add Note</string>
+
+    <string name="txt_my_apiaries">My Apiaries</string>
+    <string name="txt_my_beehives">My Beehives</string>
+
+    <!--  Apiary Form  -->
+    <string name="txt_edit_apiary">Edit Apiary</string>
+    <string name="txt_add_apiary">Add Apiary</string>
+
+    <string name="txt_name_apiary">Name</string>
+    <string name="txt_name_apiary_hint">Write your name</string>
+
+    <string name="txt_description_apiary">Description</string>
+    <string name="txt_description_apiary_hint">Write your description</string>
+
+
+
+    <!--  Beehive Form  -->
+
+    <string name="txt_edit_beehive">Edit Beehive</string>
+    <string name="txt_add_beehive">Add Beehive</string>
+
+    <string name="txt_name_beehive">Name</string>
+    <string name="txt_name_beehive_hint">Write your name</string>
+
+    <string name="txt_device_beehive">Device (optional)</string>
+    <string name="txt_device_beehive_hint">Write your device ID</string>
+
+    <string name="txt_description_beehive">Description</string>
+    <string name="txt_description_beehive_hint">Write your description</string>
+
+
+    <!--  Beehive Details  -->
+
+    <string name="txt_description_details">Description:</string>
+    <string name="txt_created_details">Created at:</string>
+    <string name="txt_device_details">Device</string>
+    <string name="txt_device_state_details_on">Connected</string>
+    <string name="txt_device_state_details_off">Disconnected</string>
+
+    <!--  Queen  -->
+
+    <string name="txt_name_queen">Name:</string>
+    <string name="txt_description_queen">Description:</string>
+    <string name="txt_introduced_queen">Introduced:</string>
+    <string name="txt_isOut_queen">Is out:</string>
+    <string name="txt_isOut_queen_yes">Yes</string>
+    <string name="txt_isOut_queen_no">No</string>
+
+    <!--  Queen Form -->
+
+    <string name="txt_add_queen_form">Add Queen</string>
+    <string name="txt_edit_queen_form">Edit Queen</string>
+
+    <string name="txt_name_queen_form">Name</string>
+    <string name="txt_name_queen_form_hint">Write your name</string>
+
+
+    <string name="txt_description_queen_form">Description</string>
+    <string name="txt_description_queen_form_hint">Write your description</string>
+
+    <string name="txt_introduced_queen_form">Introduced</string>
+
+    <string name="txt_isOut_queen_form_title">Is the queen in the beehive?</string>
+    <string name="txt_isOut_queen_form">Is out</string>
+
+    <!--  Tabs  -->
+
+    <string name="txt_tab_info_details">Info</string>
+    <string name="txt_tab_chart_details">Chart</string>
+    <string name="txt_tab_queen_details">Queen</string>
+
+
+    <!--  Alert Dialog  -->
+
+    <string name="txt_alert_apiary_delete">Are you sure you want to delete this apiary with beehives?</string>
+    <string name="txt_alert_beehive_delete">Are you sure you want to delete this beehive?</string>
+
+    <string name="txt_alert_title">Delete</string>
+    <string name="txt_alert_cancel">Cancel</string>
+    <string name="txt_alert_delete_ok">Successfully deleted</string>
+
+    <!--  Login  -->
+
+    <string name="txt_login_title">Welcome Back!</string>
+    <string name="txt_login_subtitle">Login to access your apiaries</string>
+    <string name="txt_login_username">Username</string>
+    <string name="txt_login_email">Email</string>
+    <string name="txt_login_password">Password</string>
+    <string name="txt_login_hint">Already have an account?</string>
+
+    <!--  Register  -->
+
+    <string name="txt_register_title">Create New Account</string>
+    <string name="txt_register_subtitle">Please provide all the required information</string>
+    <string name="txt_register_hint">Don\'t have an account? Register Now</string>
+
+    <!--  Validation  -->
+
+
+    <string name="txt_valid_all_credentials">Please provide the credentials</string>
+    <string name="txt_valid_email">Email is invalid</string>
+    <string name="txt_valid_password_length">Password length should be greater than 5</string>
+
+    <!--  Buttons  -->
+
+    <string name="txt_btn_add">Add</string>
+    <string name="txt_btn_edit">Edit</string>
     <string name="txt_submit">Submit</string>
-    <string name="add_note">Add Note</string>
+    <string name="txt_signIn">Login</string>
+    <string name="txt_signUp">Sign Up</string>
+
 </resources>

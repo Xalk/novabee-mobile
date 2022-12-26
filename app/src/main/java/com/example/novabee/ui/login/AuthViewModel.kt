@@ -1,10 +1,14 @@
 package com.example.novabee.ui.login
 
+import android.app.Application
+import android.provider.Settings.Global.getString
 import android.text.TextUtils
 import android.util.Patterns
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.novabee.R
 import com.example.novabee.models.UserRequest
 import com.example.novabee.models.UserResponse
 import com.example.novabee.repository.UserRepository
@@ -14,7 +18,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AuthViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
+class AuthViewModel @Inject constructor(
+    private val userRepository: UserRepository,
+    application: Application
+) : AndroidViewModel(application) {
 
     val userResponseLiveData: LiveData<NetworkResult<UserResponse>>
         get() = userRepository.userResponseLiveData
@@ -45,11 +52,11 @@ class AuthViewModel @Inject constructor(private val userRepository: UserReposito
             (!isLogin && TextUtils.isEmpty(username)) ||
             TextUtils.isEmpty(password)
         ) {
-            result = Pair(false, "Please provide the credentials")
+            result = Pair(false, getApplication<Application>().resources.getString(R.string.txt_valid_all_credentials))
         } else if (!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()) {
-            result = Pair(false, "Email is invalid")
+            result = Pair(false, getApplication<Application>().resources.getString(R.string.txt_valid_email))
         } else if (!TextUtils.isEmpty(password) && password.length <= 5) {
-            result = Pair(false, "Password length should be greater than 5")
+            result = Pair(false, getApplication<Application>().resources.getString(R.string.txt_valid_password_length))
         }
         return result
 

@@ -68,9 +68,9 @@ class InfoFragment() : Fragment() {
                     binding.createdAt.text = it.data!!.createdAt
 
                     if (it.data!!.deviceID != ""){
-                        binding.device.text = "connected"
+                        binding.device.text = getString(R.string.txt_device_state_details_on)
                     }else{
-                        binding.device.text = "disconnected"
+                        binding.device.text = getString(R.string.txt_device_state_details_off)
                     }
                 }
                 is NetworkResult.Error -> {

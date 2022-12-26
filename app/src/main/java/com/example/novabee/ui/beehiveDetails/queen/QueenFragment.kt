@@ -52,10 +52,7 @@ class QueenFragment() : Fragment() {
         bindObservers()
         queenViewModel.getQueen(beehive!!.apiary, beehive!!._id)
 
-        val testData = arguments?.getString("queen")
-        if (testData != null) {
-//            Log.d(Constants.TAG, testData + "QUEEN")
-        }
+
 
         binding.edit.setOnClickListener{
             val bundle = Bundle()
@@ -92,7 +89,13 @@ class QueenFragment() : Fragment() {
                     binding.queenName.text = it.data.name
                     binding.description.text = it.data.description
                     binding.introduced.text = it.data.introducedFrom
-                    binding.isOut.text = it.data.isOut.toString()
+
+                    if(it.data.isOut){
+                        binding.isOut.text = getString(R.string.txt_isOut_queen_yes)
+                    }else{
+                        binding.isOut.text = getString(R.string.txt_isOut_queen_no)
+                    }
+
                 }
                 is NetworkResult.Error -> {
                     Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)

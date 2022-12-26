@@ -14,7 +14,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/sf_pro_display_bold"
-        android:text="My Apiaries"
+        android:text="@string/txt_my_apiaries"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

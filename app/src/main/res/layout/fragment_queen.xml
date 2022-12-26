@@ -44,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="21dp"
-                    android:text="Name:"
+                    android:text="@string/txt_name_queen"
                     android:textStyle="bold" />
 
                 <TextView
@@ -64,7 +64,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Description:"
+                    android:text="@string/txt_description_queen"
                     android:textStyle="bold" />
 
                 <TextView
@@ -82,7 +82,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Introduced:"
+                    android:text="@string/txt_introduced_queen"
                     android:textStyle="bold" />
 
                 <TextView
@@ -100,7 +100,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Is out: "
+                    android:text="@string/txt_isOut_queen"
                     android:textStyle="bold" />
 
                 <TextView
@@ -115,24 +115,24 @@
 
     <Button
         android:id="@+id/edit"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
         android:drawableLeft="@drawable/ic_baseline_edit_24"
-        android:text="Edit"
+        android:text="@string/txt_btn_edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <Button
         android:id="@+id/add"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
         android:drawableLeft="@drawable/ic_baseline_add_24"
         android:drawableTint="#FFFFFF"
-        android:text="Add"
+        android:text="@string/txt_btn_add"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 

@@ -84,7 +84,7 @@ class BeehiveFormFragment : Fragment() {
                 binding.txtDeviceId.setText(it.deviceID)
             }
         } else {
-            binding.addEditText.text = "Add Beehive"
+            binding.addEditText.text = getString(R.string.txt_add_beehive)
         }
 
         val jsonApiary = arguments?.getString("apiaryId")

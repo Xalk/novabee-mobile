@@ -42,7 +42,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Description: "
+                    android:text="@string/txt_description_details"
                     android:textStyle="bold"
 
                     />
@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Created at:"
+                    android:text="@string/txt_created_details"
                     android:textStyle="bold" />
 
                 <TextView
@@ -80,7 +80,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Device: "
+                    android:text="@string/txt_device_details"
                     android:textStyle="bold" />
 
                 <TextView
@@ -97,17 +97,16 @@
 
         <Button
             android:id="@+id/editBtn"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
 
-
             android:layout_below="@+id/imageView3"
-            android:layout_alignStart="@+id/imageView3"
-            android:layout_alignEnd="@+id/imageView3"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="9dp"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="21dp"
             android:drawableLeft="@drawable/ic_baseline_edit_24"
-            android:text="Edit" />
+            android:text="@string/txt_btn_edit" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

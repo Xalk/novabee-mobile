@@ -1,5 +1,6 @@
 package com.example.novabee
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -65,6 +66,7 @@ class ApiaryFormFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setInitialData() {
         val jsonApiary = arguments?.getString("apiary")
         if (jsonApiary != null) {
@@ -74,7 +76,7 @@ class ApiaryFormFragment : Fragment() {
                 binding.txtDescription.setText(it.description)
             }
         } else {
-            binding.addEditText.text = "Add Apiary"
+            binding.addEditText.text = getString(R.string.txt_add_apiary)
         }
     }
 

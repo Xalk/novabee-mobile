@@ -32,7 +32,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/sf_pro_display_bold"
-                android:text="Edit Queen"
+                android:text="@string/txt_edit_queen_form"
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Name"
+                android:text="@string/txt_name_queen_form"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
@@ -55,7 +55,7 @@
                 android:layout_marginTop="7dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/sf_pro_display_semibold"
-                android:hint="Write your name"
+                android:hint="@string/txt_name_queen_form_hint"
                 android:textColor="@color/black"
                 android:textColorHint="@color/light_gray"
                 android:textSize="16sp" />
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Introduced"
+                android:text="@string/txt_introduced_queen_form"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Is the queen in the beehive?"
+                android:text="@string/txt_isOut_queen_form_title"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
-                android:text="Is out" />
+                android:text="@string/txt_isOut_queen_form" />
 
             <View
                 android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="@string/txt_description"
+                android:text="@string/txt_description_queen_form"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
@@ -128,7 +128,7 @@
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/sf_pro_display_semibold"
                 android:gravity="top|start"
-                android:hint="Write your description"
+                android:hint="@string/txt_description_queen_form_hint"
                 android:inputType="textMultiLine"
                 android:lines="10"
                 android:scrollbars="vertical"

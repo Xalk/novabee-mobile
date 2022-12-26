@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/sf_pro_display_bold"
-            android:text="@string/txt_login_header"
+            android:text="@string/txt_login_title"
             android:textColor="@color/black"
             android:textSize="30sp" />
 
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/sf_pro_display_regular"
-            android:text="Login to access your apiaries"
+            android:text="@string/txt_login_subtitle"
             android:textColor="@color/light_gray"
             android:textSize="16sp" />
 
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
             android:fontFamily="@font/sf_pro_display_regular"
-            android:text="@string/txt_email"
+            android:text="@string/txt_login_email"
             android:textColor="@color/black"
             android:textSize="12sp" />
 
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/sf_pro_display_regular"
-            android:text="@string/txt_password"
+            android:text="@string/txt_login_password"
             android:textColor="@color/black"
             android:textSize="12sp" />
 
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/sf_pro_display_bold"
-            android:text="@string/txt_login"
+            android:text="@string/txt_signIn"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="16sp" />
@@ -124,7 +124,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/sf_pro_display_semibold"
-            android:text="@string/txt_no_account_signup"
+            android:text="@string/txt_register_hint"
             android:textSize="14sp" />
 
         <com.github.ybq.android.spinkit.SpinKitView

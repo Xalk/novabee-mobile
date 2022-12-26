@@ -59,9 +59,9 @@ class BeehiveDetailsFragment : Fragment() {
         tabLayout = view.findViewById(R.id.tabLayout)
         viewPager = view.findViewById(R.id.viewPager)
 
-        tabLayout.addTab(tabLayout.newTab().setText("Info"))
-        tabLayout.addTab(tabLayout.newTab().setText("Chart"))
-        tabLayout.addTab(tabLayout.newTab().setText("Queen"))
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.txt_tab_info_details)))
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.txt_tab_chart_details)))
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.txt_tab_queen_details)))
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
         val adapter = BeehivePagerAdapter(this, childFragmentManager, tabLayout.tabCount, beehive!!)
@@ -108,10 +108,10 @@ class BeehiveDetailsFragment : Fragment() {
         val builder = AlertDialog.Builder(view.context)
 
         // set title
-        builder.setTitle("Delete")
+        builder.setTitle(getString(R.string.txt_alert_title))
 
         //set content area
-        builder.setMessage("Are you sure you want to delete this beehive?")
+        builder.setMessage(getString(R.string.txt_alert_beehive_delete))
 
         //set negative button
         builder.setPositiveButton(
@@ -121,12 +121,12 @@ class BeehiveDetailsFragment : Fragment() {
                 beehiveDetailsViewModel.deleteBeehive(it!!.apiary, it._id)
             }
             findNavController().popBackStack()
-            Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.txt_alert_delete_ok), Toast.LENGTH_SHORT).show()
         }
 
         //set positive button
         builder.setNegativeButton(
-            "Cancel"
+            getString(R.string.txt_alert_cancel)
         ) { dialog, id ->
             // User cancelled the dialog
         }

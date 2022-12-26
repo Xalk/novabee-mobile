@@ -86,25 +86,25 @@ class BeehiveFragment : Fragment() {
         val builder = AlertDialog.Builder(view.context)
 
         // set title
-        builder.setTitle("Delete")
+        builder.setTitle(getString(R.string.txt_alert_title))
 
         //set content area
-        builder.setMessage("Are you sure you want to delete this apiary with beehives?")
+        builder.setMessage(getString(R.string.txt_alert_apiary_delete))
 
         //set negative button
         builder.setPositiveButton(
-            "Delete"
+            getString(R.string.txt_alert_delete_ok)
         ) { dialog, id ->
             apiary.let {
                 apiaryViewModel.deleteApiary(it!!._id)
             }
             findNavController().popBackStack()
-            Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.txt_alert_delete_ok), Toast.LENGTH_SHORT).show()
         }
 
         //set positive button
         builder.setNegativeButton(
-            "Cancel"
+            getString(R.string.txt_alert_cancel)
         ) { dialog, id ->
             // User cancelled the dialog
         }

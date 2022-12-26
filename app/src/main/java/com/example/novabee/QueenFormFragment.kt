@@ -95,7 +95,7 @@ class QueenFormFragment : Fragment() {
                 binding.txtDescription.setText(it.description)
             }
         } else {
-            binding.addEditText.text = "Add Queen"
+            binding.addEditText.text = getString(R.string.txt_add_queen_form)
         }
 
 
