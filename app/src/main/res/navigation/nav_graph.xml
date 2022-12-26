@@ -107,5 +107,11 @@
         android:id="@+id/settingsFragment"
         android:name="com.example.novabee.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

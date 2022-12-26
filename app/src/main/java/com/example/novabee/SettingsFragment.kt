@@ -1,6 +1,7 @@
 package com.example.novabee
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,12 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.novabee.databinding.FragmentSettingsBinding
+import com.example.novabee.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -23,6 +27,9 @@ class SettingsFragment : Fragment() {
 
     lateinit var locle: Locale
     private var currentLanguage = Locale.getDefault().language
+
+    @Inject
+    lateinit var tokenManager: TokenManager
 
     @SuppressLint("ResourceType")
     override fun onCreateView(
@@ -78,6 +85,14 @@ class SettingsFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Do nothing
             }
+        }
+
+        binding.logout.setOnClickListener {
+            tokenManager.deleteToken()
+            findNavController().navigate(R.id.action_settingsFragment_to_registerFragment)
+            requireActivity().intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(requireActivity().intent)
+
         }
 
     }

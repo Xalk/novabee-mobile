@@ -5,6 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+        android:drawableLeft="@drawable/ic_baseline_exit_to_app_24"
+        android:drawableTint="#FFFFFF"
+        android:text="@string/txt_logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+
+        />
+
     <TextView
         android:id="@+id/add_edit_text"
         android:layout_width="match_parent"
@@ -21,8 +36,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="32dp"
@@ -36,23 +51,26 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            >
 
             <Spinner
                 android:id="@+id/language_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/languages_array"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="3dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
+                android:entries="@array/languages_array"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
 
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_baseline_language_24" />
+
+
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

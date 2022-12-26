@@ -113,6 +113,7 @@
     <!--  Buttons  -->
 
     <string name="txt_settings_title">Налаштування</string>
+    <string name="txt_logout">Вихід з аккаунту</string>
 
 
 </resources>
