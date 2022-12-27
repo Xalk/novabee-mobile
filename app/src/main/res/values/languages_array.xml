@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="languages_array">
-        <item>Select Language</item>
-        <item>Ukrainian</item>
-        <item>English</item>
+        <item>@string/txt_select_lang</item>
+        <item>@string/txt_lang_uk</item>
+        <item>@string/txt_lang_en</item>
     </string-array>
 </resources>

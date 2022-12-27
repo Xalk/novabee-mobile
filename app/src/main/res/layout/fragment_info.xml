@@ -6,7 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.beehiveDetails.InfoFragment">
 
+
+    <com.github.ybq.android.spinkit.SpinKitView
+
+        android:id="@+id/progress_bar"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        app:SpinKit_Color="#fab040"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/editBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="#fab040"
+        android:drawableLeft="@drawable/ic_baseline_edit_24"
+        android:drawableTint="#FFFFFF"
+        android:text="@string/txt_btn_edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="16dp"
@@ -27,7 +60,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="9dp"
@@ -94,19 +126,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </TableLayout>
-
-        <Button
-            android:id="@+id/editBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-
-            android:layout_below="@+id/imageView3"
-            android:layout_alignParentStart="true"
-
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="21dp"
-            android:drawableLeft="@drawable/ic_baseline_edit_24"
-            android:text="@string/txt_btn_edit" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

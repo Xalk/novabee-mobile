@@ -107,7 +107,7 @@
         <Button
             android:id="@+id/btn_login"
             style="@style/Widget.Material3.Button"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="#fab040"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -136,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:SpinKit_Color="@color/black" />
+            app:SpinKit_Color="#fab040" />
 
     </LinearLayout>
 

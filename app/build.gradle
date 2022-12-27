@@ -9,7 +9,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.xalk.novanee"
+        applicationId "com.xalk.novabee"
         minSdk 21
         targetSdk 32
         versionCode 1

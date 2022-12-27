@@ -17,7 +17,7 @@
             android:id="@+id/apiary"
             android:layout_width="104dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/ic_apiary" />
+            app:srcCompat="@drawable/ic_coloredapiary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Beehive: 0"
+                android:text="@string/txt_beehive_count"
                 android:textColor="#000"
                 android:textSize="13sp" />
 

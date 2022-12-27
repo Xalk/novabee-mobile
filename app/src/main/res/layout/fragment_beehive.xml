@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    >
+
 
 
     <TextView
@@ -26,9 +29,12 @@
         android:layout_height="32dp"
         android:background="?android:selectableItemBackground"
         android:src="@drawable/ic_baseline_edit_24"
+
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:tint="#000000" />
+
+
+         />
 
     <ImageButton
         android:id="@+id/deleteBtn"
@@ -71,7 +77,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        app:backgroundTint="@color/light_gray"
+        app:backgroundTint="#FFC02E"
         android:id="@+id/add_beehive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

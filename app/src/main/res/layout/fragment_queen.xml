@@ -9,6 +9,40 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+
+        android:layout_marginBottom="25dp"
+
+        android:backgroundTint="#4caf50"
+        android:drawableLeft="@drawable/ic_baseline_add_24"
+        android:drawableTint="#FFFFFF"
+
+        android:text="@string/txt_btn_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="#fab040"
+        android:drawableLeft="@drawable/ic_baseline_edit_24"
+        android:drawableTint="#FFFFFF"
+        android:text="@string/txt_btn_edit"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
@@ -112,28 +146,5 @@
         </TableLayout>
 
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/edit"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="4dp"
-        android:drawableLeft="@drawable/ic_baseline_edit_24"
-        android:text="@string/txt_btn_edit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-    <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="4dp"
-        android:drawableLeft="@drawable/ic_baseline_add_24"
-        android:drawableTint="#FFFFFF"
-        android:text="@string/txt_btn_add"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

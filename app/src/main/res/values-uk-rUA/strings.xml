@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="txt_my_apiaries">Мої Пасіки</string>
-    <string name="txt_my_beehives">Мої Вулики</string>
+    <string name="txt_my_apiaries">Мої пасіки</string>
+    <string name="txt_my_beehives">Мої вулики</string>
 
     <!--  Apiary Form  -->
     <string name="txt_edit_apiary">Редагувати пасіку</string>
@@ -41,7 +41,7 @@
     <!--  Queen  -->
 
     <string name="txt_name_queen">Назва:</string>
-    <string name="txt_description_queen">Назва:</string>
+    <string name="txt_description_queen">Опис:</string>
     <string name="txt_introduced_queen">Введено:</string>
     <string name="txt_isOut_queen">Відсутня:</string>
     <string name="txt_isOut_queen_yes">Так</string>
@@ -114,6 +114,10 @@
 
     <string name="txt_settings_title">Налаштування</string>
     <string name="txt_logout">Вихід з аккаунту</string>
+    <string name="txt_beehive_count">"Кількість пасік: "</string>
+    <string name="txt_select_lang">Виберіть мову</string>
+    <string name="txt_lang_uk">Українська</string>
+    <string name="txt_lang_en">English</string>
 
 
 </resources>

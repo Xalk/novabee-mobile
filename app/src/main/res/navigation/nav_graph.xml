@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.novabee.ui.login.LoginFragment"
+        android:name="com.xalk.novabee.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.novabee.ui.login.RegisterFragment"
+        android:name="com.xalk.novabee.ui.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.novabee.ui.apiary.MainFragment"
+        android:name="com.xalk.novabee.ui.apiary.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/beehiveFragment"
-        android:name="com.example.novabee.ui.beehive.BeehiveFragment"
+        android:name="com.xalk.novabee.ui.beehive.BeehiveFragment"
         android:label="fragment_beehive"
         tools:layout="@layout/fragment_beehive" >
         <action
@@ -74,7 +74,7 @@
     </fragment>
     <fragment
         android:id="@+id/beehiveDetails"
-        android:name="com.example.novabee.ui.beehiveDetails.BeehiveDetailsFragment"
+        android:name="com.xalk.novabee.ui.beehiveDetails.BeehiveDetailsFragment"
         android:label="fragment_beehive_details"
         tools:layout="@layout/fragment_beehive_details" >
         <action
@@ -90,22 +90,22 @@
     </fragment>
     <fragment
         android:id="@+id/beehiveFormFragment"
-        android:name="com.example.novabee.BeehiveFormFragment"
+        android:name="com.xalk.novabee.BeehiveFormFragment"
         android:label="fragment_beehive_form"
         tools:layout="@layout/fragment_beehive_form" />
     <fragment
         android:id="@+id/queenFormFragment"
-        android:name="com.example.novabee.QueenFormFragment"
+        android:name="com.xalk.novabee.QueenFormFragment"
         android:label="fragment_queen_form"
         tools:layout="@layout/fragment_queen_form" />
     <fragment
         android:id="@+id/apiaryFormFragment"
-        android:name="com.example.novabee.ApiaryFormFragment"
+        android:name="com.xalk.novabee.ApiaryFormFragment"
         android:label="fragment_apiary_form"
         tools:layout="@layout/fragment_apiary_form" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.novabee.SettingsFragment"
+        android:name="com.xalk.novabee.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action

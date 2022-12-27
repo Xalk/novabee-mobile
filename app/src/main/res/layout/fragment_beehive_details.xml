@@ -7,7 +7,10 @@
     tools:context=".ui.beehiveDetails.BeehiveDetailsFragment">
 
 
+
+
     <TextView
+
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +18,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/sf_pro_display_bold"
         android:gravity="center"
-        android:text="My Beehive"
+
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +50,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:tabTextColor="#000000" />
+
+        app:tabIndicatorColor="#fab040"
+        app:tabSelectedTextColor="#FFD26D"
+        app:tabTextColor="#fab040"
+        />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

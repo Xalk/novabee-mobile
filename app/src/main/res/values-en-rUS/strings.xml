@@ -113,4 +113,8 @@
 
     <string name="txt_settings_title">Settings</string>
     <string name="txt_logout">Logout</string>
+    <string name="txt_beehive_count">"Beehives: "</string>
+    <string name="txt_select_lang">Select Language</string>
+    <string name="txt_lang_uk">Ukrainian</string>
+    <string name="txt_lang_en">English</string>
 </resources>
