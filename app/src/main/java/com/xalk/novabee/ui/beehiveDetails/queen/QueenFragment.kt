@@ -98,8 +98,8 @@ class QueenFragment() : Fragment() {
 
                 }
                 is NetworkResult.Error -> {
-                    Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)
-                        .show()
+//                    Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_SHORT)
+//                        .show()
                     binding.queenName.text = "-"
                     binding.description.text = "-"
                     binding.introduced.text = "-"
